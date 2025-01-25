@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Freertos - 标签 - Ohmytime</title>
+    <link>https://ohmytime.github.io/tags/freertos/</link>
+    <description>This is my new Hugo FixIt site</description>
+    <generator>Hugo 0.141.0 &amp; FixIt v0.3.16</generator>
+    <language>en</language>
+    <managingEditor>liqingyu.kevin@gmail.com (ohmytime)</managingEditor>
+    <webMaster>liqingyu.kevin@gmail.com (ohmytime)</webMaster>
+    <lastBuildDate>Sat, 25 Jan 2025 17:19:15 +0800</lastBuildDate>
+    <atom:link href="https://ohmytime.github.io/tags/freertos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Freertos教程</title>
+      <link>https://ohmytime.github.io/posts/freertos%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Sat, 25 Jan 2025 15:58:01 +0800</pubDate><author>liqingyu.kevin@gmail.com (ohmytime)</author>
+      <guid>https://ohmytime.github.io/posts/freertos%E6%95%99%E7%A8%8B/</guid>
+      <category domain="https://ohmytime.github.io/categories/freertos/">Freertos</category>
+      <description>&lt;p&gt;&lt;a href=&#34;https://space.bilibili.com/1338335828&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Michael_ee&lt;/a&gt; 的免费教程&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

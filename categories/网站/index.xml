@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>网站 - 分类 - Ohmytime</title>
+    <link>https://ohmytime.github.io/categories/%E7%BD%91%E7%AB%99/</link>
+    <description>This is my new Hugo FixIt site</description>
+    <generator>Hugo 0.141.0 &amp; FixIt v0.3.16</generator>
+    <language>en</language>
+    <managingEditor>liqingyu.kevin@gmail.com (ohmytime)</managingEditor>
+    <webMaster>liqingyu.kevin@gmail.com (ohmytime)</webMaster>
+    <lastBuildDate>Sat, 25 Jan 2025 19:24:26 +0800</lastBuildDate>
+    <atom:link href="https://ohmytime.github.io/categories/%E7%BD%91%E7%AB%99/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>文档教程</title>
+      <link>https://ohmytime.github.io/posts/%E6%96%87%E6%A1%A3%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Sat, 25 Jan 2025 18:50:15 +0800</pubDate><author>liqingyu.kevin@gmail.com (ohmytime)</author>
+      <guid>https://ohmytime.github.io/posts/%E6%96%87%E6%A1%A3%E6%95%99%E7%A8%8B/</guid>
+      <category domain="https://ohmytime.github.io/categories/%E7%BD%91%E7%AB%99/">网站</category>
+      <description>&lt;p&gt;本教程演示基本的编辑技巧，以供查询&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;打字机效果&lt;/li&gt;&#xA;&lt;li&gt;Font Awesome&lt;/li&gt;&#xA;&lt;li&gt;emoji表情&lt;/li&gt;&#xA;&lt;li&gt;Shortcodes&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>
