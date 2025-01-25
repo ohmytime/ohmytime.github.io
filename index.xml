@@ -8,8 +8,16 @@
     <language>en</language>
     <managingEditor>liqingyu.kevin@gmail.com (ohmytime)</managingEditor>
     <webMaster>liqingyu.kevin@gmail.com (ohmytime)</webMaster>
-    <lastBuildDate>Sat, 25 Jan 2025 12:43:06 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jan 2025 13:07:49 +0800</lastBuildDate>
     <atom:link href="https://ohmytime.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TRX收发器结构</title>
+      <link>https://ohmytime.github.io/posts/trx%E6%94%B6%E5%8F%91%E5%99%A8%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Sat, 25 Jan 2025 13:01:57 +0800</pubDate><author>liqingyu.kevin@gmail.com (ohmytime)</author>
+      <guid>https://ohmytime.github.io/posts/trx%E6%94%B6%E5%8F%91%E5%99%A8%E7%BB%93%E6%9E%84/</guid>
+      <category domain="https://ohmytime.github.io/categories/wolf/">Wolf</category>
+      <description>&lt;p&gt;TRX (Transceiver) 是收发机的核心部分。从代码中可以看到TRX相关的菜单设置：&lt;/p&gt;&#xA;&lt;pre class=&#34;mermaid&#34;&gt;&#xA;graph LR&#xA;    A[TRX主结构] --&gt; B[VFO设置]&#xA;    A --&gt; C[频率控制]&#xA;    A --&gt; D[音频处理]&#xA;    A --&gt; E[滤波器]&#xA;    A --&gt; F[校准数据]&#xA;    A --&gt; G[WiFi设置]&#xA;&#xA;    B --&gt; B1[VFO_A]&#xA;    B --&gt; B2[VFO_B]&#xA;    B1 --&gt; B11[频率Freq]&#xA;    B1 --&gt; B12[模式Mode]&#xA;    B1 --&gt; B13[滤波器Filter]&#xA;    &#xA;    C --&gt; C1[频率步进STEP]&#xA;    C --&gt; C2[RIT/XIT]&#xA;    C --&gt; C3[波段设置]&#xA;    &#xA;    D --&gt; D1[音量Volume]&#xA;    D --&gt; D2[均衡器EQ]&#xA;    D --&gt; D3[AGC控制]&#xA;    &#xA;    E --&gt; E1[低通LPF]&#xA;    E --&gt; E2[高通HPF]&#xA;    E --&gt; E3[带通BPF]&#xA;    &#xA;    F --&gt; F1[SWR校准]&#xA;    F --&gt; F2[功率校准]&#xA;    F --&gt; F3[S表校准]&#xA;&#xA;&lt;/pre&gt;&#xA;&lt;template&gt;&#xA;graph LR&#xA;    A[TRX主结构] --&gt; B[VFO设置]&#xA;    A --&gt; C[频率控制]&#xA;    A --&gt; D[音频处理]&#xA;    A --&gt; E[滤波器]&#xA;    A --&gt; F[校准数据]&#xA;    A --&gt; G[WiFi设置]&#xA;&#xA;    B --&gt; B1[VFO_A]&#xA;    B --&gt; B2[VFO_B]&#xA;    B1 --&gt; B11[频率Freq]&#xA;    B1 --&gt; B12[模式Mode]&#xA;    B1 --&gt; B13[滤波器Filter]&#xA;    &#xA;    C --&gt; C1[频率步进STEP]&#xA;    C --&gt; C2[RIT/XIT]&#xA;    C --&gt; C3[波段设置]&#xA;    &#xA;    D --&gt; D1[音量Volume]&#xA;    D --&gt; D2[均衡器EQ]&#xA;    D --&gt; D3[AGC控制]&#xA;    &#xA;    E --&gt; E1[低通LPF]&#xA;    E --&gt; E2[高通HPF]&#xA;    E --&gt; E3[带通BPF]&#xA;    &#xA;    F --&gt; F1[SWR校准]&#xA;    F --&gt; F2[功率校准]&#xA;    F --&gt; F3[S表校准]&#xA;&#xA;&lt;/template&gt;</description>
+    </item>
     <item>
       <title>狼代码阅读</title>
       <link>https://ohmytime.github.io/posts/%E7%8B%BC%E4%BB%A3%E7%A0%81%E9%98%85%E8%AF%BB/</link>
