@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Esp32 - 标签 - Ohmytime</title>
+    <link>https://ohmytime.github.io/tags/esp32/</link>
+    <description>This is my new Hugo FixIt site</description>
+    <generator>Hugo 0.141.0 &amp; FixIt v0.3.16</generator>
+    <language>en</language>
+    <managingEditor>liqingyu.kevin@gmail.com (ohmytime)</managingEditor>
+    <webMaster>liqingyu.kevin@gmail.com (ohmytime)</webMaster>
+    <lastBuildDate>Sat, 25 Jan 2025 12:07:46 +0800</lastBuildDate>
+    <atom:link href="https://ohmytime.github.io/tags/esp32/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>4735</title>
+      <link>https://ohmytime.github.io/posts/si4735/</link>
+      <pubDate>Thu, 23 Jan 2025 06:47:55 +0000</pubDate><author>liqingyu.kevin@gmail.com (ohmytime)</author>
+      <guid>https://ohmytime.github.io/posts/si4735/</guid>
+      <category domain="https://ohmytime.github.io/categories/%E5%BC%80%E5%8F%91/">开发</category>
+      <description>&lt;p&gt;&lt;a href=&#34;https://oshwhub.com/sunnygold/esp32s3-si4732-shou-yin-ji&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;立创开源平台&lt;/a&gt;  &lt;a href=&#34;https://github.com/ralphxavier/SI4735&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;源代码&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/ohmytime/img-hosting@main/imgs/O1CN01Tg7vEb1OAA4rdcMjP_!!2218306111664.jpg_468x468Q75.jpg_.webp&#34; alt=&#34;图片&#34; srcset=&#34;https://cdn.jsdelivr.net/gh/ohmytime/img-hosting@main/imgs/O1CN01Tg7vEb1OAA4rdcMjP_!!2218306111664.jpg_468x468Q75.jpg_.webp?size=small, https://cdn.jsdelivr.net/gh/ohmytime/img-hosting@main/imgs/O1CN01Tg7vEb1OAA4rdcMjP_!!2218306111664.jpg_468x468Q75.jpg_.webp?size=medium 1.5x, https://cdn.jsdelivr.net/gh/ohmytime/img-hosting@main/imgs/O1CN01Tg7vEb1OAA4rdcMjP_!!2218306111664.jpg_468x468Q75.jpg_.webp?size=large 2x&#34; data-title=&#34;图片&#34; style=&#34;background: url(/images/loading.min.svg) no-repeat center;&#34; onload=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}this.dataset.lazyloaded=&#39;&#39;;&#34; onerror=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}&#34;/&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Arduino手动安装开发板</title>
+      <link>https://ohmytime.github.io/posts/arduino%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85%E5%BC%80%E5%8F%91%E6%9D%BF/</link>
+      <pubDate>Thu, 23 Jan 2025 06:47:55 +0000</pubDate><author>liqingyu.kevin@gmail.com (ohmytime)</author>
+      <guid>https://ohmytime.github.io/posts/arduino%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85%E5%BC%80%E5%8F%91%E6%9D%BF/</guid>
+      <category domain="https://ohmytime.github.io/categories/%E5%BC%80%E5%8F%91/">开发</category>
+      <description>&lt;p&gt;RT, 使用魔法也不行，&lt;/p&gt;&#xA;&lt;p&gt;那就手动下载，然后把下载的东西逐个放进如下地址，再安装就可以了。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

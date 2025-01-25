@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hello - Tag - Ohmytime</title>
+    <link>http://localhost:1313/tags/hello/</link>
+    <description>This is my new Hugo FixIt site</description>
+    <generator>Hugo 0.141.0 &amp; FixIt v0.3.16</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 23 Jan 2025 14:47:55 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/hello/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello World</title>
+      <link>http://localhost:1313/posts/hello-world/</link>
+      <pubDate>Thu, 23 Jan 2025 06:47:55 +0000</pubDate>
+      <guid>http://localhost:1313/posts/hello-world/</guid>
+      <category domain="http://localhost:1313/categories/hello/">Hello</category>
+      <description>&lt;p&gt;Welcome to Hugo FixIt! This is your very first post.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
