@@ -3,11 +3,185 @@
 
 本教程演示基本的编辑技巧，以供查询  
 
-- 打字机效果
-- Font Awesome
-- emoji表情
-- Shortcodes
 &lt;!--more--&gt;
+## Markdown 基础语法
+### 核心操作 
+#### 注释
+``` md
+&lt;!-- 这是一段注释 --&gt;
+```
+#### 加粗
+两个*包围  
+```md
+**渲染为粗体**
+__渲染为粗体__
+```
+效果如下：  
+**渲染为粗体**  
+__渲染为粗体__  
+
+#### 斜体
+一个*包围   
+用于强调带有斜体的文本片段。  
+以下文本片段被 渲染为斜体。  
+```md
+*渲染为斜体*  
+_渲染为斜体_
+```
+*渲染为斜体*  
+_渲染为斜体_  
+
+#### 删除线
+两个~包围  
+以下文本片段被 渲染为删除线。
+```md
+~~ 我是删除线 ~~
+```
+~~我是删除线~~
+### 核心组合使用
+加粗，斜体，和删除线可以 组合使用  
+下面一段代码渲染效果如下 ：
+```md
+**_~~我加粗倾体然后被删除了~~_**
+``` 
+**_~~我加粗倾体然后被删除了~~_**  
+
+## Emoji表情符号
+这部分内容在 [Emoji 表情符号][emoji]   中介绍。
+{{&lt; ref &#34;emoji&#34; &gt;}}
+
+## Markdown 扩展语法 (Fixit风格)
+### 警示
+#### 基本警示(简单用法)
+```md
+&gt; [!NOTE]
+&gt; 突出显示用户应考虑的信息，即使只是浏览也应考虑。
+
+&gt; [!TIP]
+&gt; 可选信息，可帮助用户取得更大的成功。
+
+&gt; [!IMPORTANT]
+&gt; 用户成功所需的关键信息。
+
+&gt; [!WARNING]
+&gt; 由于存在潜在风险，需要用户立即关注的关键内容。
+
+&gt; [!CAUTION]
+&gt; 操作的潜在负面后果。
+```
+呈现的效果如下：
+&gt; [!NOTE]
+&gt; 突出显示用户应考虑的信息，即使只是浏览也应考虑。
+
+&gt; [!TIP]
+&gt; 可选信息，可帮助用户取得更大的成功。
+
+&gt; [!IMPORTANT]
+&gt; 用户成功所需的关键信息。
+
+&gt; [!WARNING]
+&gt; 由于存在潜在风险，需要用户立即关注的关键内容。
+
+&gt; [!CAUTION]
+&gt; 操作的潜在负面后果。  
+
+你甚至可以省略正文来创建仅标题的警示  
+&gt; [!TIP] 仅标题的警示
+
+#### 可折叠警示(复杂用法)
+你可以通过在类型标识符后直接添加加号（&#43;）或减号（-）来使警示可折叠。  
+```md
+&gt; [!WARNING]&#43; 辐射危害
+&gt; 请勿在没有防护装备的情况下接近或操作。
+
+&gt; [!QUESTION]- 警示可以折叠吗？
+&gt; 是的！在可折叠警示中，内容在折叠时被隐藏。
+```
+&gt; [!WARNING]&#43; 辐射危害
+&gt; 请勿在没有防护装备的情况下接近或操作。
+
+&gt; [!QUESTION]- 警示可以折叠吗？
+&gt; 是的！在可折叠警示中，内容在折叠时被隐藏。
+
+#### 嵌套警示
+```md
+&gt; [!question] 警示可以嵌套吗？
+&gt; &gt; [!todo] 可以！它们可以。
+&gt; &gt; &gt; [!example] 你甚至可以使用多层嵌套。
+```
+&gt; [!question] 警示可以嵌套吗？
+&gt; &gt; [!todo] 可以！它们可以。
+&gt; &gt; &gt; [!example] 你甚至可以使用多层嵌套。
+
+### 任务
+要创建任务列表，请在每个列表项前添加一个短横线和空格，然后跟上 [ ]  
+```md
+- [x] 这是一个已完成的任务。
+- [ ] 这是一个未完成的任务。
+```
+- [x] 这是一个已完成的任务。
+- [ ] 这是一个未完成的任务。
+你可以在括号内使用任何字符来标记任务为已完成或其他状态  
+```md
+- [ ] 未完成
+- [x] 已完成
+- [/] 进行中
+- [-] 已取消
+- [&lt;] 已计划
+- [&gt;] 已重新计划
+- [!] 重要
+- [?] 问题
+```
+- [ ] 未完成
+- [x] 已完成
+- [/] 进行中
+- [-] 已取消
+- [&lt;] 已计划
+- [&gt;] 已重新计划
+- [!] 重要
+- [?] 问题
+&gt;[!WARNING]- 如何开启 Hugo 扩展语法
+&gt;下划线、标记文本、下标 和 上标 语法默认关闭，需更新 Hugo 版本到 0.128.0 以上且开启以下的配置：
+&gt;```md
+&gt;[markup]
+&gt;  [markup.goldmark]
+&gt;    [markup.goldmark.extensions]
+&gt;      strikethrough = false
+&gt;      # https://gohugo.io/getting-started/configuration-markup/#extras
+&gt;      [markup.goldmark.extensions.extras]
+&gt;        [markup.goldmark.extensions.extras.delete]
+&gt;          enable = true
+&gt;        [markup.goldmark.extensions.extras.insert]
+&gt;          enable = true
+&gt;        [markup.goldmark.extensions.extras.mark]
+&gt;          enable = true
+&gt;        [markup.goldmark.extensions.extras.subscript]
+&gt;          enable = true
+&gt;        [markup.goldmark.extensions.extras.superscript]
+&gt;          enable = true
+&gt;```
+### 下划线
+```md
+FixIt 主题的作者是 &#43;&#43;Lruihao&#43;&#43;。
+```
+FixIt 主题的作者是 &#43;&#43;Lruihao&#43;&#43;。
+
+
+### 标记文本
+Hugo 支持一种 标记文本 Markdown 扩展语法：  
+```md
+==FixIt== 是一个很棒的 Hugo 主题！
+```
+==FixIt== 是一个很棒的 Hugo 主题！
+
+下面是Fixit扩展的语法
+```md
+&gt; [!NOTE] FixIt
+&gt; 一个简洁、优雅且高效的 Hugo 主题。
+```
+&gt; [!NOTE] FixIt
+&gt; 一个简洁、优雅且高效的 Hugo 主题。
+&gt; 
 #### 打字机效果
 
 {{&lt; typeit &gt;}}
@@ -33,25 +207,25 @@ FixIt 主题使用 Font Awesome V6 作为图标库。 你同样可以在文章�
 
 #### Shortcodes
 
-{{&lt; admonition &gt;}}
+{{&lt; admonition tips &gt;}}
 The quick brown fox jumps over the lazy dog.
 {{&lt; /admonition &gt;}}
 
 
-## Table of Contents
-  * [Chapter 1](#chapter-1)
-  * [Chapter 2](#chapter-2)
-  * [Chapter 3](#chapter-3)
+#### TODO 以及 CheckBox
+
+##### Todo
+- [ ] initiate  
+- [ ] participate  
+- [ ] redeem  
+- [ ] refund  
+
+##### Checkbox
+- [x] ReadMe
+- [ ] ReadMe_CN
+
+
   
-
-### Chapter 1 &lt;a id=&#34;chapter-1&#34;&gt;&lt;/a&gt;
-Content for chapter one.
-
-### Chapter 2 &lt;a id=&#34;chapter-2&#34;&gt;&lt;/a&gt;
-Content for chapter one.
-
-### Chapter 3 &lt;a id=&#34;chapter-3&#34;&gt;&lt;/a&gt;
-Content for chapter one.
 
 
 
