@@ -48,7 +48,8 @@ _渲染为斜体_
 
 ## Emoji表情符号
 这部分内容在 [Emoji 表情符号][emoji]   中介绍。
-{{&lt; ref &#34;emoji&#34; &gt;}}
+
+[Emoj]({{&lt; ref &#34;emoji&#34; &gt;}} &#34;Emoji表情符号&#34;)
 
 ## Markdown 扩展语法 (Fixit风格)
 ### 警示
