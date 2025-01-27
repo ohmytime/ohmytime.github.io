@@ -4,6 +4,9 @@
 本教程演示基本的编辑技巧，以供查询  
 
 &lt;!--more--&gt;
+## 文章自定义属性
+[查看自定义属性](https://fixit.lruihao.cn/zh-cn/documentation/content-management/introduction/#front-matter &#34;Front Matter&#34;)
+
 ## Markdown 基础语法
 ### 核心操作 
 #### 注释
@@ -187,10 +190,11 @@ Hugo 支持一种 标记文本 Markdown 扩展语法：
 
 
 #### mermaid 流程图工具
+mermaid shortcode 使用 Mermaid 库提供绘制图表和流程图的功能。  
+
 这部分内容在 [mermaid]({{&lt; ref &#34;mermaid&#34; &gt;}} &#34;mermaid使用介绍&#34;) 中介绍。  
 
 
-mermaid shortcode 使用 Mermaid 库提供绘制图表和流程图的功能。
 
 #### Font Awesome
 
