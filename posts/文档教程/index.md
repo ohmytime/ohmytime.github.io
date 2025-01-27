@@ -185,11 +185,11 @@ Hugo 支持一种 标记文本 Markdown 扩展语法：
 &gt; [!NOTE] FixIt
 &gt; 一个简洁、优雅且高效的 Hugo 主题。
 &gt; 
-#### 打字机效果
+### 打字机效果
 这部分内容在 [Typeit]({{&lt; ref &#34;typeit&#34; &gt;}} &#34;typeit使用介绍&#34;) 中介绍。  
 
 
-#### Font Awesome
+### Font Awesome
 
 FixIt 主题使用 Font Awesome V6 作为图标库。 你同样可以在文章中轻松使用这些图标。
 
@@ -197,7 +197,7 @@ FixIt 主题使用 Font Awesome V6 作为图标库。 你同样可以在文章�
 
 真开心！→ :(fa-solid fa-pen-nib):   :(fa-solid fa-star):  :(fa-solid fa-paperclip):  
 
-#### emoji表情
+### emoji表情
 真开心！:joy:   → [表情代号查询](https://fixit.lruihao.cn/zh-cn/guides/emoji-support/)
 
 ### Shortcodes
