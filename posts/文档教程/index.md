@@ -189,13 +189,6 @@ Hugo 支持一种 标记文本 Markdown 扩展语法：
 这部分内容在 [Typeit]({{&lt; ref &#34;typeit&#34; &gt;}} &#34;typeit使用介绍&#34;) 中介绍。  
 
 
-#### mermaid 流程图工具
-mermaid shortcode 使用 Mermaid 库提供绘制图表和流程图的功能。  
-
-这部分内容在 [mermaid]({{&lt; ref &#34;mermaid&#34; &gt;}} &#34;mermaid使用介绍&#34;) 中介绍。  
-
-
-
 #### Font Awesome
 
 FixIt 主题使用 Font Awesome V6 作为图标库。 你同样可以在文章中轻松使用这些图标。
@@ -207,15 +200,23 @@ FixIt 主题使用 Font Awesome V6 作为图标库。 你同样可以在文章�
 #### emoji表情
 真开心！:joy:   → [表情代号查询](https://fixit.lruihao.cn/zh-cn/guides/emoji-support/)
 
-#### Shortcodes
+### Shortcodes
 
 {{&lt; admonition tips &gt;}}
 The quick brown fox jumps over the lazy dog.
 {{&lt; /admonition &gt;}}
 
+#### mapbox
+
+这部分内容在 [mapbox]({{&lt; ref &#34;mapbox&#34; &gt;}} &#34;mapbox使用介绍&#34;) 中介绍。  
 
 
-  
+#### mermaid 流程图工具
+mermaid shortcode 使用 Mermaid 库提供绘制图表和流程图的功能。  
+
+这部分内容在 [mermaid]({{&lt; ref &#34;mermaid&#34; &gt;}} &#34;mermaid使用介绍&#34;) 中介绍。  
+
+
 
 
 
