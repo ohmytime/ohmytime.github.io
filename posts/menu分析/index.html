@@ -5,44 +5,43 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>一次点击的代码分析过程 - Ohmytime</title><meta name="author" content="ohmytime">
-<meta name="description" content="字体引用框架图 graph TD A[触摸中断] --&gt; B{GT911_Scan} B --&gt; |读取坐标| C[TOUCHPAD_processTouch] C --&gt; D{触摸类型判断} D --&gt;|单击| E[LCD_processTouch] D --&gt;|长按| F[LCD_processHoldTouch] D --&gt;|滑动| G[LCD_processSwipeTouch] E --&gt; H{菜单项判断} H --&gt;|有效| I[执行菜单回调] H --&gt;|无效| J[返回] I --&gt; K[更新菜单状态] K --&gt; L[请求重绘] L --&gt; M[RA8875硬件加速绘制] graph TD A[触摸中断] --&gt; B{GT911_Scan} B --&gt; |读取坐标| C[TOUCHPAD_processTouch] C --&gt; D{触摸类型判断} D --&gt;|单击| E[LCD_processTouch] D --&gt;|长按| F[LCD_processHoldTouch] D --&gt;|滑动| G[LCD_processSwipeTouch] E --&gt; H{菜单项判断} H --&gt;|有效| I[执行菜单回调] H --&gt;|无效| J[返回] I --&gt; K[更新菜单状态] K --&gt; L[请求重绘] L --&gt; M[RA8875硬件加速绘制] "><meta name="keywords" content='wolf, 开发'>
-  <meta itemprop="name" content="一次点击的代码分析过程">
-  <meta itemprop="description" content="字体引用框架图 graph TD A[触摸中断] --&gt; B{GT911_Scan} B --&gt; |读取坐标| C[TOUCHPAD_processTouch] C --&gt; D{触摸类型判断} D --&gt;|单击| E[LCD_processTouch] D --&gt;|长按| F[LCD_processHoldTouch] D --&gt;|滑动| G[LCD_processSwipeTouch] E --&gt; H{菜单项判断} H --&gt;|有效| I[执行菜单回调] H --&gt;|无效| J[返回] I --&gt; K[更新菜单状态] K --&gt; L[请求重绘] L --&gt; M[RA8875硬件加速绘制] graph TD A[触摸中断] --&gt; B{GT911_Scan} B --&gt; |读取坐标| C[TOUCHPAD_processTouch] C --&gt; D{触摸类型判断} D --&gt;|单击| E[LCD_processTouch] D --&gt;|长按| F[LCD_processHoldTouch] D --&gt;|滑动| G[LCD_processSwipeTouch] E --&gt; H{菜单项判断} H --&gt;|有效| I[执行菜单回调] H --&gt;|无效| J[返回] I --&gt; K[更新菜单状态] K --&gt; L[请求重绘] L --&gt; M[RA8875硬件加速绘制]">
-  <meta itemprop="datePublished" content="2025-01-25T06:47:55+00:00">
-  <meta itemprop="dateModified" content="2025-01-25T12:04:42+08:00">
-  <meta itemprop="wordCount" content="277">
-  <meta itemprop="keywords" content="Wolf,开发"><meta property="og:url" content="https://ohmytime.github.io/posts/%E4%B8%80%E6%AC%A1%E7%82%B9%E5%87%BB%E7%9A%84%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E8%BF%87%E7%A8%8B/">
+    <title>Menu分析 - Ohmytime</title><meta name="author" content="ohmytime">
+<meta name="description" content="菜单分析
+"><meta name="keywords" content='wolf, 开发'>
+  <meta itemprop="name" content="Menu分析">
+  <meta itemprop="description" content="菜单分析">
+  <meta itemprop="datePublished" content="2025-01-27T11:55:13+08:00">
+  <meta itemprop="dateModified" content="2025-01-27T11:59:24+08:00">
+  <meta itemprop="wordCount" content="636">
+  <meta itemprop="keywords" content="wolf,开发"><meta property="og:url" content="https://ohmytime.github.io/posts/menu%E5%88%86%E6%9E%90/">
   <meta property="og:site_name" content="Ohmytime">
-  <meta property="og:title" content="一次点击的代码分析过程">
-  <meta property="og:description" content="字体引用框架图 graph TD A[触摸中断] --&gt; B{GT911_Scan} B --&gt; |读取坐标| C[TOUCHPAD_processTouch] C --&gt; D{触摸类型判断} D --&gt;|单击| E[LCD_processTouch] D --&gt;|长按| F[LCD_processHoldTouch] D --&gt;|滑动| G[LCD_processSwipeTouch] E --&gt; H{菜单项判断} H --&gt;|有效| I[执行菜单回调] H --&gt;|无效| J[返回] I --&gt; K[更新菜单状态] K --&gt; L[请求重绘] L --&gt; M[RA8875硬件加速绘制] graph TD A[触摸中断] --&gt; B{GT911_Scan} B --&gt; |读取坐标| C[TOUCHPAD_processTouch] C --&gt; D{触摸类型判断} D --&gt;|单击| E[LCD_processTouch] D --&gt;|长按| F[LCD_processHoldTouch] D --&gt;|滑动| G[LCD_processSwipeTouch] E --&gt; H{菜单项判断} H --&gt;|有效| I[执行菜单回调] H --&gt;|无效| J[返回] I --&gt; K[更新菜单状态] K --&gt; L[请求重绘] L --&gt; M[RA8875硬件加速绘制]">
+  <meta property="og:title" content="Menu分析">
+  <meta property="og:description" content="菜单分析">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-01-25T06:47:55+00:00">
-    <meta property="article:modified_time" content="2025-01-25T12:04:42+08:00">
-    <meta property="article:tag" content="Wolf">
-    <meta property="article:tag" content="开发">
+    <meta property="article:published_time" content="2025-01-27T11:55:13+08:00">
+    <meta property="article:modified_time" content="2025-01-27T11:59:24+08:00">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="一次点击的代码分析过程">
-  <meta name="twitter:description" content="字体引用框架图 graph TD A[触摸中断] --&gt; B{GT911_Scan} B --&gt; |读取坐标| C[TOUCHPAD_processTouch] C --&gt; D{触摸类型判断} D --&gt;|单击| E[LCD_processTouch] D --&gt;|长按| F[LCD_processHoldTouch] D --&gt;|滑动| G[LCD_processSwipeTouch] E --&gt; H{菜单项判断} H --&gt;|有效| I[执行菜单回调] H --&gt;|无效| J[返回] I --&gt; K[更新菜单状态] K --&gt; L[请求重绘] L --&gt; M[RA8875硬件加速绘制] graph TD A[触摸中断] --&gt; B{GT911_Scan} B --&gt; |读取坐标| C[TOUCHPAD_processTouch] C --&gt; D{触摸类型判断} D --&gt;|单击| E[LCD_processTouch] D --&gt;|长按| F[LCD_processHoldTouch] D --&gt;|滑动| G[LCD_processSwipeTouch] E --&gt; H{菜单项判断} H --&gt;|有效| I[执行菜单回调] H --&gt;|无效| J[返回] I --&gt; K[更新菜单状态] K --&gt; L[请求重绘] L --&gt; M[RA8875硬件加速绘制]">
+  <meta name="twitter:title" content="Menu分析">
+  <meta name="twitter:description" content="菜单分析">
 <meta name="application-name" content="Hugo FixIt Blog">
 <meta name="apple-mobile-web-app-title" content="Hugo FixIt Blog"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://ohmytime.github.io/posts/%E4%B8%80%E6%AC%A1%E7%82%B9%E5%87%BB%E7%9A%84%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E8%BF%87%E7%A8%8B/" title="一次点击的代码分析过程 - Ohmytime" /><link rel="prev" type="text/html" href="https://ohmytime.github.io/posts/trx%E6%94%B6%E5%8F%91%E5%99%A8%E7%BB%93%E6%9E%84/" title="TRX收发器结构" /><link rel="next" type="text/html" href="https://ohmytime.github.io/posts/freertos%E6%95%99%E7%A8%8B/" title="Freertos教程" /><link rel="alternate" type="text/markdown" href="https://ohmytime.github.io/posts/%E4%B8%80%E6%AC%A1%E7%82%B9%E5%87%BB%E7%9A%84%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E8%BF%87%E7%A8%8B/index.md" title="一次点击的代码分析过程 - Ohmytime"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://ohmytime.github.io/posts/menu%E5%88%86%E6%9E%90/" title="Menu分析 - Ohmytime" /><link rel="prev" type="text/html" href="https://ohmytime.github.io/posts/mapbox/" title="扩展 Shortcode - mapbox" /><link rel="next" type="text/html" href="https://ohmytime.github.io/posts/vsc%E5%BF%AB%E6%8D%B7%E9%94%AE/" title="VSC快捷键" /><link rel="alternate" type="text/markdown" href="https://ohmytime.github.io/posts/menu%E5%88%86%E6%9E%90/index.md" title="Menu分析 - Ohmytime"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "一次点击的代码分析过程",
+    "headline": "Menu分析",
     "inLanguage": "en",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/ohmytime.github.io\/posts\/%E4%B8%80%E6%AC%A1%E7%82%B9%E5%87%BB%E7%9A%84%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E8%BF%87%E7%A8%8B\/"
-    },"genre": "posts","keywords": "wolf, 开发","wordcount":  277 ,
-    "url": "https:\/\/ohmytime.github.io\/posts\/%E4%B8%80%E6%AC%A1%E7%82%B9%E5%87%BB%E7%9A%84%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E8%BF%87%E7%A8%8B\/","datePublished": "2025-01-25T06:47:55+00:00","dateModified": "2025-01-25T12:04:42+08:00","publisher": {
+      "@id": "https:\/\/ohmytime.github.io\/posts\/menu%E5%88%86%E6%9E%90\/"
+    },"genre": "posts","wordcount":  636 ,
+    "url": "https:\/\/ohmytime.github.io\/posts\/menu%E5%88%86%E6%9E%90\/","datePublished": "2025-01-27T11:55:13+08:00","dateModified": "2025-01-27T11:59:24+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -113,100 +112,190 @@
   </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
 
   <article class="page single">
-    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>一次点击的代码分析过程</span>
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Menu分析</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><a href="ohmytime.github.io" title="作者" rel=" author" class="author"><img loading="lazy" src="https://www.gravatar.com/avatar/9e613ad86c84f26446d5b6fc78387cba?s=32&amp;d=" alt="ohmytime" data-title="ohmytime" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;ohmytime</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/wolf/" class="post-category" title="分类 - Wolf"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Wolf</a></span></div><div class="post-meta-line"><span title="发布于 2025-01-25 06:47:55"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-01-25">2025-01-25</time></span>&nbsp;<span title="更新于 2025-01-25 12:04:42"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2025-01-25">2025-01-25</time></span>&nbsp;<span title="277 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="一次点击的代码分析过程"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+      <div class="post-meta-line"><span class="post-author"><a href="ohmytime.github.io" title="作者" rel=" author" class="author"><img loading="lazy" src="https://www.gravatar.com/avatar/9e613ad86c84f26446d5b6fc78387cba?s=32&amp;d=" alt="ohmytime" data-title="ohmytime" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;ohmytime</a></span></div><div class="post-meta-line"><span title="发布于 2025-01-27 11:55:13"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-01-27">2025-01-27</time></span>&nbsp;<span title="更新于 2025-01-27 11:59:24"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2025-01-27">2025-01-27</time></span>&nbsp;<span title="636 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 700 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Menu分析"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
           </span>&nbsp;</div>
-    </div><div class="details toc" id="toc-static" data-kept="false">
-        <div class="details-summary toc-title">
-          <span>目录</span>
-          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
-        </div>
-        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#字体引用框架图">字体引用框架图</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-      </div><div class="content" id="content" data-end-flag="&lt;--  The end --&gt; "><h3 id="字体引用框架图" class="heading-element"><span>字体引用框架图</span>
-  <a href="#%e5%ad%97%e4%bd%93%e5%bc%95%e7%94%a8%e6%a1%86%e6%9e%b6%e5%9b%be" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h3><pre class="mermaid">
+    </div><div class="content" id="content" data-end-flag="&lt;--  The end --&gt; "><p>菜单分析</p>
+<pre class="mermaid">graph LR
+    A[TRX Settings] --> B[Band Map]
+    A --> C[Beeper]
+    A --> D[Channel Mode]
+    A --> E[Debug console]
+    A --> F[Encoder Accelerate]
+    A --> G[Freq Step CW]
+    A --> H[Freq Step SSB]
+    A --> I[Freq Step AM]
+    A --> J[Freq Step FM]
+    A --> K[Freq Step WFM]
+    A --> L[Fast Step Mult]
+    A --> M[ENC2 Step Mult]
+    A --> N[Notch Step, Hz]
+    A --> O[Full Duplex]
+    A --> P[Locator]
+    A --> Q[RIT Interval]
+    A --> R[XIT Interval]
+    A --> S[Callsign]
+    A --> T[URSI Code]
+    A --> U[TROPO Region]
+    A --> V[Transverter Settings]
+    A --> W[RF Settings]
+    A --> X[Antenna Settings]
+    A --> Y[AGC Settings]
+    A --> Z[SQL Settings]
+    A --> AA[Repeater Mode]
+    A --> AB[CW Settings]
+    A --> AC[Other Settings]
 
-graph TD
-    A[触摸中断] --> B{GT911_Scan}
-    B --> |读取坐标| C[TOUCHPAD_processTouch]
-    C --> D{触摸类型判断}
-    
-    D -->|单击| E[LCD_processTouch]
-    D -->|长按| F[LCD_processHoldTouch]
-    D -->|滑动| G[LCD_processSwipeTouch]
-    
-    E --> H{菜单项判断}
-    H -->|有效| I[执行菜单回调]
-    H -->|无效| J[返回]
-    
-    I --> K[更新菜单状态]
-    K --> L[请求重绘]
-    L --> M[RA8875硬件加速绘制]
+    V --> VA[Transverter 2m]
+    V --> VB[Transverter 70cm]
+    V --> VC[Transverter 23cm]
+    V --> VD[Transverter 13cm]
+    V --> VE[Transverter 6cm]
+    V --> VF[Transverter 3cm]
+    V --> VG[Transverter QO100]
+    V --> VH[Transverter 1.2cm]
+    V --> VI[Fine RIT Tune]
+    V --> VJ[Auto Input Sw.]
 
-</pre>
-<template>
+    W --> WA[RF Gain]
+    W --> WB[RF Gain Band]
+    W --> WC[RF Gain Mode]
+    W --> WD[RF Unit Type]
+    W --> WE[RF Filters]
 
-graph TD
-    A[触摸中断] --> B{GT911_Scan}
-    B --> |读取坐标| C[TOUCHPAD_processTouch]
-    C --> D{触摸类型判断}
-    
-    D -->|单击| E[LCD_processTouch]
-    D -->|长按| F[LCD_processHoldTouch]
-    D -->|滑动| G[LCD_processSwipeTouch]
-    
-    E --> H{菜单项判断}
-    H -->|有效| I[执行菜单回调]
-    H -->|无效| J[返回]
-    
-    I --> K[更新菜单状态]
-    K --> L[请求重绘]
-    L --> M[RA8875硬件加速绘制]
+    X --> XA[Antenna RX]
+    X --> XB[Antenna TX]
 
-</template>
-</div><hr class="awesome-hr" />
+    Y --> YA[AGC]
+    Y --> YB[SQL]
+
+    AB --> ACA[CW LPF Filter]
+    AB --> ACB[CW Keyer]
+    AB --> ACC[CW Keyer WPM]
+    AB --> ACD[CW Dot/Dash Rate]
+    AB --> ACE[CW Invert]
+    AB --> ACF[CW Pitch]
+    AB --> ACG[CW Key Timeout]
+    AB --> ACH[CW Self Hear]
+    AB --> ACI[CW One Symbol Mem]
+    AB --> ACJ[CW Iambic]
+    AB --> ACK[CW Iambic Type]
+    AB --> ACL[CW PTT Type]
+    AB --> ACM[CW Edges Smooth]
+    AB --> ACN[CW Macros 1]
+    AB --> ACO[CW Macros 2]
+    AB --> ACP[CW Macros 3]
+    AB --> ACQ[CW Macros 4]
+    AB --> ACR[CW Macros 5]
+    AB --> ACS[CW Macros Name 1]
+    AB --> ACT[CW Macros Name 2]
+    AB --> ACU[CW Macros Name 3]
+    AB --> ACV[CW Macros Name 4]
+    AB --> ACW[CW Macros Name 5]</pre>
+<template>graph LR
+    A[TRX Settings] --> B[Band Map]
+    A --> C[Beeper]
+    A --> D[Channel Mode]
+    A --> E[Debug console]
+    A --> F[Encoder Accelerate]
+    A --> G[Freq Step CW]
+    A --> H[Freq Step SSB]
+    A --> I[Freq Step AM]
+    A --> J[Freq Step FM]
+    A --> K[Freq Step WFM]
+    A --> L[Fast Step Mult]
+    A --> M[ENC2 Step Mult]
+    A --> N[Notch Step, Hz]
+    A --> O[Full Duplex]
+    A --> P[Locator]
+    A --> Q[RIT Interval]
+    A --> R[XIT Interval]
+    A --> S[Callsign]
+    A --> T[URSI Code]
+    A --> U[TROPO Region]
+    A --> V[Transverter Settings]
+    A --> W[RF Settings]
+    A --> X[Antenna Settings]
+    A --> Y[AGC Settings]
+    A --> Z[SQL Settings]
+    A --> AA[Repeater Mode]
+    A --> AB[CW Settings]
+    A --> AC[Other Settings]
+
+    V --> VA[Transverter 2m]
+    V --> VB[Transverter 70cm]
+    V --> VC[Transverter 23cm]
+    V --> VD[Transverter 13cm]
+    V --> VE[Transverter 6cm]
+    V --> VF[Transverter 3cm]
+    V --> VG[Transverter QO100]
+    V --> VH[Transverter 1.2cm]
+    V --> VI[Fine RIT Tune]
+    V --> VJ[Auto Input Sw.]
+
+    W --> WA[RF Gain]
+    W --> WB[RF Gain Band]
+    W --> WC[RF Gain Mode]
+    W --> WD[RF Unit Type]
+    W --> WE[RF Filters]
+
+    X --> XA[Antenna RX]
+    X --> XB[Antenna TX]
+
+    Y --> YA[AGC]
+    Y --> YB[SQL]
+
+    AB --> ACA[CW LPF Filter]
+    AB --> ACB[CW Keyer]
+    AB --> ACC[CW Keyer WPM]
+    AB --> ACD[CW Dot/Dash Rate]
+    AB --> ACE[CW Invert]
+    AB --> ACF[CW Pitch]
+    AB --> ACG[CW Key Timeout]
+    AB --> ACH[CW Self Hear]
+    AB --> ACI[CW One Symbol Mem]
+    AB --> ACJ[CW Iambic]
+    AB --> ACK[CW Iambic Type]
+    AB --> ACL[CW PTT Type]
+    AB --> ACM[CW Edges Smooth]
+    AB --> ACN[CW Macros 1]
+    AB --> ACO[CW Macros 2]
+    AB --> ACP[CW Macros 3]
+    AB --> ACQ[CW Macros 4]
+    AB --> ACR[CW Macros 5]
+    AB --> ACS[CW Macros Name 1]
+    AB --> ACT[CW Macros Name 2]
+    AB --> ACU[CW Macros Name 3]
+    AB --> ACV[CW Macros Name 4]
+    AB --> ACW[CW Macros Name 5]</template></div><hr class="awesome-hr" />
     <h2 id="see-also">相关内容</h2>
     <ul><li>
-          <a href="/posts/font/" title="字体">字体</a></li><li>
-          <a href="/posts/lcd%E9%A9%B1%E5%8A%A8%E6%98%A0%E5%B0%84/" title="LCD驱动映射">LCD驱动映射</a></li><li>
-          <a href="/posts/ra8875%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87/" title="RA8875显示中文">RA8875显示中文</a></li><li>
-          <a href="/posts/layout/" title="布局Layout">布局Layout</a></li><li>
-          <a href="/posts/git/" title="Git">Git</a></li></ul><div class="post-footer" id="post-footer">
+          <a href="/posts/trx%E6%94%B6%E5%8F%91%E5%99%A8%E7%BB%93%E6%9E%84/" title="TRX收发器结构">TRX收发器结构</a></li></ul><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2025-01-25 12:04:42">更新于 2025-01-25&nbsp;</span>
+        <span title="更新于 2025-01-27 11:59:24">更新于 2025-01-27&nbsp;</span>
       </div><div class="post-info-license">
             <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
           </div></div><div class="post-info-line">
-        <div class="post-info-md"><span><a href="/posts/%E4%B8%80%E6%AC%A1%E7%82%B9%E5%87%BB%E7%9A%84%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E8%BF%87%E7%A8%8B/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
+        <div class="post-info-md"><span><a href="/posts/menu%E5%88%86%E6%9E%90/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="分享到 X" data-sharer="twitter" data-url="https://ohmytime.github.io/posts/%E4%B8%80%E6%AC%A1%E7%82%B9%E5%87%BB%E7%9A%84%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E8%BF%87%E7%A8%8B/" data-title="一次点击的代码分析过程" data-hashtags="wolf,开发"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://ohmytime.github.io/posts/%E4%B8%80%E6%AC%A1%E7%82%B9%E5%87%BB%E7%9A%84%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E8%BF%87%E7%A8%8B/" data-hashtag="wolf"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://ohmytime.github.io/posts/%E4%B8%80%E6%AC%A1%E7%82%B9%E5%87%BB%E7%9A%84%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E8%BF%87%E7%A8%8B/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://ohmytime.github.io/posts/%E4%B8%80%E6%AC%A1%E7%82%B9%E5%87%BB%E7%9A%84%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E8%BF%87%E7%A8%8B/" data-title="一次点击的代码分析过程"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://ohmytime.github.io/posts/%E4%B8%80%E6%AC%A1%E7%82%B9%E5%87%BB%E7%9A%84%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E8%BF%87%E7%A8%8B/" data-title="一次点击的代码分析过程"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="分享到 X" data-sharer="twitter" data-url="https://ohmytime.github.io/posts/menu%E5%88%86%E6%9E%90/" data-title="Menu分析"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://ohmytime.github.io/posts/menu%E5%88%86%E6%9E%90/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://ohmytime.github.io/posts/menu%E5%88%86%E6%9E%90/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://ohmytime.github.io/posts/menu%E5%88%86%E6%9E%90/" data-title="Menu分析"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://ohmytime.github.io/posts/menu%E5%88%86%E6%9E%90/" data-title="Menu分析"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
   </span>
         </div>
       </div></div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/wolf/" class="post-tag" title="标签 - Wolf">Wolf</a><a href="/tags/%E5%BC%80%E5%8F%91/" class="post-tag" title="标签 - 开发">开发</a></section>
+    <section class="post-tags"></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
-  </div><div class="post-nav"><a href="/posts/trx%E6%94%B6%E5%8F%91%E5%99%A8%E7%BB%93%E6%9E%84/" class="post-nav-item" rel="prev" title="TRX收发器结构"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>TRX收发器结构</a><a href="/posts/freertos%E6%95%99%E7%A8%8B/" class="post-nav-item" rel="next" title="Freertos教程">Freertos教程<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  </div><div class="post-nav"><a href="/posts/mapbox/" class="post-nav-item" rel="prev" title="扩展 Shortcode - Mapbox"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>扩展 Shortcode - Mapbox</a><a href="/posts/vsc%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="post-nav-item" rel="next" title="VSC快捷键">VSC快捷键<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div class="post-reward">
     <div class="comment">Buy me a coffee</div>
@@ -240,8 +329,7 @@ graph TD
           Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
         </noscript></div></article>
 
-  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
-      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+  <aside class="toc" id="toc-auto" aria-label="目录"></aside></main><footer class="footer">
     <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.141.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">

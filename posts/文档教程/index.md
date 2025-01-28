@@ -163,11 +163,6 @@ _渲染为斜体_
 &gt;        [markup.goldmark.extensions.extras.superscript]
 &gt;          enable = true
 &gt;```
-### 下划线
-```md
-FixIt 主题的作者是 &#43;&#43;Lruihao&#43;&#43;。
-```
-FixIt 主题的作者是 &#43;&#43;Lruihao&#43;&#43;。
 
 
 ### 标记文本
@@ -176,6 +171,27 @@ Hugo 支持一种 标记文本 Markdown 扩展语法：
 ==FixIt== 是一个很棒的 Hugo 主题！
 ```
 ==FixIt== 是一个很棒的 Hugo 主题！
+
+### 下划线
+```md
+FixIt 主题的作者是 &#43;&#43;Lruihao&#43;&#43;。
+```
+FixIt 主题的作者是 &#43;&#43;Lruihao&#43;&#43;。
+
+### 上标
+```md
+2^10^ 等于 1024。
+```
+
+2^10^ 等于 1024。
+
+```mermaid
+kanban
+  column1[Column Title]
+    task1[Task Description]
+
+```
+$c = \pm\sqrt{a\^2 &#43; b\^2}$ 和 \\(f(x)=\int_{-\infty}\^{\infty} \hat{f}(\xi) e\^{2 \pi i \xi x} d \xi\\)
 
 下面是Fixit扩展的语法
 ```md

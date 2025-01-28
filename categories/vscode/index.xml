@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VSCode - 分类 - Ohmytime</title>
+    <link>https://ohmytime.github.io/categories/vscode/</link>
+    <description>This is my new Hugo FixIt site</description>
+    <generator>Hugo 0.141.0 &amp; FixIt v0.3.16</generator>
+    <language>en</language>
+    <managingEditor>liqingyu.kevin@gmail.com (ohmytime)</managingEditor>
+    <webMaster>liqingyu.kevin@gmail.com (ohmytime)</webMaster>
+    <lastBuildDate>Mon, 27 Jan 2025 18:58:52 +0800</lastBuildDate>
+    <atom:link href="https://ohmytime.github.io/categories/vscode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSC快捷键</title>
+      <link>https://ohmytime.github.io/posts/vsc%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <pubDate>Mon, 27 Jan 2025 18:29:52 +0800</pubDate><author>liqingyu.kevin@gmail.com (ohmytime)</author>
+      <guid>https://ohmytime.github.io/posts/vsc%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <category domain="https://ohmytime.github.io/categories/vscode/">VSCode</category>
+      <description>&lt;p&gt;VSC 的常用快捷键 基于Mac&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -8,7 +8,7 @@
     <language>en</language>
     <managingEditor>liqingyu.kevin@gmail.com (ohmytime)</managingEditor>
     <webMaster>liqingyu.kevin@gmail.com (ohmytime)</webMaster>
-    <lastBuildDate>Mon, 27 Jan 2025 11:30:04 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jan 2025 20:15:40 +0800</lastBuildDate>
     <atom:link href="https://ohmytime.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>文档教程</title>
@@ -17,6 +17,21 @@
       <guid>https://ohmytime.github.io/posts/%E6%96%87%E6%A1%A3%E6%95%99%E7%A8%8B/</guid>
       <category domain="https://ohmytime.github.io/categories/%E6%96%87%E6%A1%A3%E6%95%99%E7%A8%8B/">文档教程</category>
       <description>&lt;p&gt;本教程演示基本的编辑技巧，以供查询&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VSC快捷键</title>
+      <link>https://ohmytime.github.io/posts/vsc%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <pubDate>Mon, 27 Jan 2025 18:29:52 +0800</pubDate><author>liqingyu.kevin@gmail.com (ohmytime)</author>
+      <guid>https://ohmytime.github.io/posts/vsc%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <category domain="https://ohmytime.github.io/categories/vscode/">VSCode</category>
+      <description>&lt;p&gt;VSC 的常用快捷键 基于Mac&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Menu分析</title>
+      <link>https://ohmytime.github.io/posts/menu%E5%88%86%E6%9E%90/</link>
+      <pubDate>Mon, 27 Jan 2025 11:55:13 +0800</pubDate><author>liqingyu.kevin@gmail.com (ohmytime)</author>
+      <guid>https://ohmytime.github.io/posts/menu%E5%88%86%E6%9E%90/</guid>
+      <description>&lt;p&gt;菜单分析&lt;/p&gt;</description>
     </item>
     <item>
       <title>Freertos教程</title>
