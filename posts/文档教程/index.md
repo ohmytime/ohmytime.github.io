@@ -185,12 +185,6 @@ FixIt 主题的作者是 &#43;&#43;Lruihao&#43;&#43;。
 
 2^10^ 等于 1024。
 
-```mermaid
-kanban
-  column1[Column Title]
-    task1[Task Description]
-
-```
 $c = \pm\sqrt{a\^2 &#43; b\^2}$ 和 \\(f(x)=\int_{-\infty}\^{\infty} \hat{f}(\xi) e\^{2 \pi i \xi x} d \xi\\)
 
 下面是Fixit扩展的语法
@@ -231,6 +225,10 @@ The quick brown fox jumps over the lazy dog.
 mermaid shortcode 使用 Mermaid 库提供绘制图表和流程图的功能。  
 
 这部分内容在 [mermaid]({{&lt; ref &#34;mermaid&#34; &gt;}} &#34;mermaid使用介绍&#34;) 中介绍。  
+
+
+
+$c = \sqrt{10^{\frac{dBm}{10}} \cdot Z \cdot 10^{-3}} \cdot  10^6$
 
 
 
