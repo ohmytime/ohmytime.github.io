@@ -10,6 +10,8 @@
 - [tip] 这是一个带有提示图标的自定义任务列表类型。  
 - 真开心！:(fa-solid fa-pen-nib):  
 
+&lt;!-- 带有 CSS 类的分割线 --&gt;
+{.awesome-hr}
 
 ---
 

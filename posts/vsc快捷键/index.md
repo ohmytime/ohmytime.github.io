@@ -27,6 +27,11 @@ VSC 的常用快捷键 基于Mac
 
 &lt;kbd&gt;Shift&lt;/kbd&gt; &#43; &lt;kbd&gt;CMD&lt;/kbd&gt; &#43; &lt;kbd&gt;O&lt;/kbd&gt;  
 
+&lt;!-- 带有 CSS 类的分割线 --&gt;
+
+---
+{.awesome-hr}
+
 
 ---
 

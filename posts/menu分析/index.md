@@ -83,6 +83,9 @@ graph LR
 ```
 
 ---
+{.awesome-hr}
+
+---
 
 > 作者: [ohmytime](ohmytime.github.io)  
 > URL: https://ohmytime.github.io/posts/menu%E5%88%86%E6%9E%90/  

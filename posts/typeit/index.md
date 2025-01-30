@@ -99,6 +99,8 @@ public class HelloWorld {
 **然后**, 这个段落开始
 {{&lt; /typeit &gt;}}
 
+---
+{.awesome-hr}
 
 
 

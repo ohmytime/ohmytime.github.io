@@ -233,6 +233,9 @@ $c = \sqrt{10^{\frac{dBm}{10}} \cdot Z \cdot 10^{-3}} \cdot  10^6$
 $c = \sqrt{10^{\frac{dBm}{10}} \cdot Z \cdot 10^{-3}} \cdot  10^6$  
 
 
+### 代码块扩展语法
+
+这部分内容在 [Code Play]({{&lt; ref &#34;Code-play&#34; &gt;}} &#34;代码块高级用法介绍&#34;) 中介绍。  
 
 
 

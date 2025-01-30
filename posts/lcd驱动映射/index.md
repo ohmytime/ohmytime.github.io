@@ -116,6 +116,9 @@ static void RA8875_DrawPixel(uint16_t x, uint16_t y, uint16_t color) {
 功能灵活：可以根据硬件特性添加专有功能  
 
 
+{.awesome-hr}
+
+
 ---
 
 > 作者: [ohmytime](ohmytime.github.io)  
