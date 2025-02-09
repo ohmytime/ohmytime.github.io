@@ -8,8 +8,16 @@
     <language>en</language>
     <managingEditor>liqingyu.kevin@gmail.com (ohmytime)</managingEditor>
     <webMaster>liqingyu.kevin@gmail.com (ohmytime)</webMaster>
-    <lastBuildDate>Sat, 25 Jan 2025 12:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 Feb 2025 20:31:56 +0800</lastBuildDate>
     <atom:link href="https://ohmytime.github.io/categories/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clangformat</title>
+      <link>https://ohmytime.github.io/posts/clangformat/</link>
+      <pubDate>Sun, 09 Feb 2025 20:06:19 +0800</pubDate><author>liqingyu.kevin@gmail.com (ohmytime)</author>
+      <guid>https://ohmytime.github.io/posts/clangformat/</guid>
+      <category domain="https://ohmytime.github.io/categories/%E5%BC%80%E5%8F%91/">开发</category>
+      <description>&lt;p&gt;Windows下基于VSC，设置Clangforat&lt;br&gt;&#xA;&lt;a href=&#34;https://blog.csdn.net/wanlong1215/article/details/109509053&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Windows下安装Clang format&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>4735</title>
       <link>https://ohmytime.github.io/posts/si4735/</link>

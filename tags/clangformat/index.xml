@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clangformat - 标签 - Ohmytime</title>
+    <link>https://ohmytime.github.io/tags/clangformat/</link>
+    <description>This is my new Hugo FixIt site</description>
+    <generator>Hugo 0.141.0 &amp; FixIt v0.3.16</generator>
+    <language>en</language>
+    <managingEditor>liqingyu.kevin@gmail.com (ohmytime)</managingEditor>
+    <webMaster>liqingyu.kevin@gmail.com (ohmytime)</webMaster>
+    <lastBuildDate>Sun, 09 Feb 2025 20:31:56 +0800</lastBuildDate>
+    <atom:link href="https://ohmytime.github.io/tags/clangformat/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clangformat</title>
+      <link>https://ohmytime.github.io/posts/clangformat/</link>
+      <pubDate>Sun, 09 Feb 2025 20:06:19 +0800</pubDate><author>liqingyu.kevin@gmail.com (ohmytime)</author>
+      <guid>https://ohmytime.github.io/posts/clangformat/</guid>
+      <category domain="https://ohmytime.github.io/categories/%E5%BC%80%E5%8F%91/">开发</category>
+      <description>&lt;p&gt;Windows下基于VSC，设置Clangforat&lt;br&gt;&#xA;&lt;a href=&#34;https://blog.csdn.net/wanlong1215/article/details/109509053&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Windows下安装Clang format&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
