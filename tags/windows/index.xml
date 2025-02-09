@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows - 标签 - Ohmytime</title>
+    <link>https://ohmytime.github.io/tags/windows/</link>
+    <description>This is my new Hugo FixIt site</description>
+    <generator>Hugo 0.141.0 &amp; FixIt v0.3.16</generator>
+    <language>en</language>
+    <managingEditor>liqingyu.kevin@gmail.com (ohmytime)</managingEditor>
+    <webMaster>liqingyu.kevin@gmail.com (ohmytime)</webMaster>
+    <lastBuildDate>Sun, 09 Feb 2025 19:56:43 +0800</lastBuildDate>
+    <atom:link href="https://ohmytime.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows Soft</title>
+      <link>https://ohmytime.github.io/posts/windows-soft/</link>
+      <pubDate>Sun, 09 Feb 2025 19:20:20 +0800</pubDate><author>liqingyu.kevin@gmail.com (ohmytime)</author>
+      <guid>https://ohmytime.github.io/posts/windows-soft/</guid>
+      <category domain="https://ohmytime.github.io/categories/os/">OS</category>
+      <description>&lt;p&gt;Windows 总是被人吐槽设计平庸、系统臃肿、品味低下，但 Windows始终是第一生产力工具，  对很多人而言是无可替代的一款产品。如何更加优雅地使用这款朝夕相伴的操作系统？&lt;br&gt;&#xA;于是有了这个项目，希望能收集和分享 Windows 下那些体验出色、不可或缺的优秀应用。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

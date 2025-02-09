@@ -8,7 +8,7 @@
     <language>en</language>
     <managingEditor>liqingyu.kevin@gmail.com (ohmytime)</managingEditor>
     <webMaster>liqingyu.kevin@gmail.com (ohmytime)</webMaster>
-    <lastBuildDate>Thu, 30 Jan 2025 17:28:09 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 Feb 2025 19:56:43 +0800</lastBuildDate>
     <atom:link href="https://ohmytime.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>文档教程</title>
@@ -17,6 +17,14 @@
       <guid>https://ohmytime.github.io/posts/%E6%96%87%E6%A1%A3%E6%95%99%E7%A8%8B/</guid>
       <category domain="https://ohmytime.github.io/categories/%E6%96%87%E6%A1%A3%E6%95%99%E7%A8%8B/">文档教程</category>
       <description>&lt;p&gt;本教程演示基本的编辑技巧，以供查询&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Windows Soft</title>
+      <link>https://ohmytime.github.io/posts/windows-soft/</link>
+      <pubDate>Sun, 09 Feb 2025 19:20:20 +0800</pubDate><author>liqingyu.kevin@gmail.com (ohmytime)</author>
+      <guid>https://ohmytime.github.io/posts/windows-soft/</guid>
+      <category domain="https://ohmytime.github.io/categories/os/">OS</category>
+      <description>&lt;p&gt;Windows 总是被人吐槽设计平庸、系统臃肿、品味低下，但 Windows始终是第一生产力工具，  对很多人而言是无可替代的一款产品。如何更加优雅地使用这款朝夕相伴的操作系统？&lt;br&gt;&#xA;于是有了这个项目，希望能收集和分享 Windows 下那些体验出色、不可或缺的优秀应用。&lt;/p&gt;</description>
     </item>
     <item>
       <title>RFTools</title>
